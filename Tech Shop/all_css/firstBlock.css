@@ -1,0 +1,49 @@
+#menuTable {
+  width: 300px;
+  height: 70ch;
+  float: left;
+  position: absolute;
+  left: -320px;
+  background-color: rgb(135, 135, 135);
+  border: 1px solid black;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+#menuTable button {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid #6b6b6b;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 20px;
+  background-color: rgb(135, 135, 135);
+  cursor: pointer;
+}
+
+.logMenu {
+  width: 100%;
+  height: 100vh;
+  background-color: azure;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+.logMenu #regisClose {
+  position: absolute;
+  top: 5%;
+  left: 95%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.logMenu #regisClose img {
+  height: 100%;
+}
