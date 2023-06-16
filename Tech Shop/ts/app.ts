@@ -7,39 +7,36 @@ function addElement() {
       <img src="ts/cross.svg" alt="a">
     </div>
     <div id="regisMenu">
-    <div id="regisMenuTop"></div>
+    <div id="regisMenuTop">
+    <p>
+    Registration form
+    </p>
+    </div>
       <form action="" method="post">
         <p>Enter your name</p>
         <div class="input-container">
-          <input type="text" id="input" required="">
-          <label for="input" class="label">Enter name</label>
+          <input type="text" required minlength="2" id="nameUser">
+          <label class="label">Enter name</label>
         <div class="underline"></div>
         </div>
         <p>Enter your email</p>
         <div class="input-container">
-          <input type="email" id="input" required="">
-          <label for="input" class="label">Enter email</label>
+          <input type="email" required>
+          <label class="label">Enter email</label>
         <div class="underline"></div>
         </div>
         <p>Enter your password</p>
         <div class="input-container">
-          <input type="password" id="parol" required="">
-          <label for="input" class="label">Enter password</label>
+          <input type="password" id="parol" required minlength="5"  maxlength="20">
+          <label class="label">Enter password</label>
         <div class="underline"></div>
         </div>
-        
-        <p>Re-enter your password</p>
-        <div class="input-container">
-          <input type="password" id="input" required id="confirm-password" value="">
-          <label for="input" class="label">Re-enter password</label>
-        <div class="underline"></div>
-        </div>
-        <input type="submit" id="submit">
+        <input type="submit" id="submit" value="Send form">
       </form>
       <button id="activePassword">Show password</button>
     </div>
-    
   `;
+
   newDiv.style.visibility = 'visible';
   const currentDiv = document.getElementById("div1");
   document.body.insertBefore(newDiv, currentDiv);
@@ -48,9 +45,9 @@ function addElement() {
     newDiv.innerHTML = '';
     newDiv.style.visibility = 'hidden';
   }
-  let check = document.getElementById("activePassword");
-  let parol = document.getElementById("parol");
 
+  let check = document.getElementById("activePassword");
+  let parol = document.getElementById("parol") as HTMLInputElement;
   check.onclick = function show() {
     if (parol.getAttribute('type') == 'password') {
       parol.removeAttribute('type');
@@ -61,17 +58,15 @@ function addElement() {
       parol.setAttribute('type', 'password');
       check.style.backgroundColor = "rgb(61, 170, 61)";
     }
-
   }
-  // let validInput: any = document.getElementById("submit")
-  // function validateForm(event: any):void {
-  //   event.preventDefault();
-  //   if (password.value !== confirmPassword.value) {
-  //     alert("Вы ввели неправильный повторный пароль.");
-  //   } else {
-  //     alert("Вы успешно зареегестрированы")
-  //   }
-  // }
+  
+
+  let submit = document.getElementById("submit") as HTMLInputElement;
+
+  submit.onclick = function checkEquality() {
+    let nameUser = document.getElementById("nameUser") as HTMLInputElement;
+    alert(`${nameUser.value} you are successfully registered`)
+  }
 }
 
 
@@ -88,4 +83,5 @@ activeMenu.onclick = function () {
     blockMenu.style.transition = "0.4s ease-in-out";
   }
 };
+
 
