@@ -1,5 +1,4 @@
 @import './index.scss';
-@import './mixin.scss';
 
 #menuTable {
     width: 300px;
@@ -7,6 +6,7 @@
     float: left;
     position: absolute;
     left: -320px;
+    top: 60px;
     background-color: $unmissableColor;
     border: 1px solid black;
     border-radius: $borderRadius;

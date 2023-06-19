@@ -4,6 +4,7 @@
   float: left;
   position: absolute;
   left: -320px;
+  top: 60px;
   background-color: rgb(135, 135, 135);
   border: 1px solid black;
   border-radius: 5px;
