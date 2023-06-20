@@ -15,13 +15,13 @@ function addElement() {
       <form action="" method="post">
         <p>Enter your name</p>
         <div class="input-container">
-          <input type="text" required minlength="2" id="nameUser">
+          <input type="text" required minlength="2" id="name">
           <label class="label">Enter name</label>
         <div class="underline"></div>
         </div>
         <p>Enter your email</p>
         <div class="input-container">
-          <input type="email" required>
+          <input type="email" required id="email">
           <label class="label">Enter email</label>
         <div class="underline"></div>
         </div>
@@ -59,13 +59,38 @@ function addElement() {
       check.style.backgroundColor = "rgb(61, 170, 61)";
     }
   }
-  
+
+  let name = document.getElementById("name") as HTMLInputElement;
+  let email = document.getElementById("email") as HTMLInputElement;
+
 
   let submit = document.getElementById("submit") as HTMLInputElement;
 
-  submit.onclick = function checkEquality() {
-    let nameUser = document.getElementById("nameUser") as HTMLInputElement;
-    alert(`${nameUser.value} you are successfully registered`)
+
+  let users = {};
+
+  function User(this: any, name, email, parol) {
+    this.name = name;
+    this.email = email;
+    this.parol = parol;
+  }
+
+
+  function createId(users) {
+    return Object.keys(users).length;
+  }
+
+  submit.onclick = () => {
+    const nameUser = name.value;
+    const emailUser = email.value;
+    const passwordlUser = parol.value;
+
+    const user = new User(nameUser, emailUser, passwordlUser);
+    const userId = 'User' + createId(users);
+    users[userId] = user;
+    console.log(users);
+
+    alert(`${name.value} you are successfully registered`);
   }
 }
 

@@ -2,7 +2,7 @@ document.getElementById("logIn").onclick = addElement;
 function addElement() {
     var newDiv = document.createElement("div");
     newDiv.classList.add("logMenu");
-    newDiv.innerHTML = "\n    <div id=\"regisClose\" onclick=\"newDiv.handleClear()\">\n      <img src=\"ts/cross.svg\" alt=\"a\">\n    </div>\n    <div id=\"regisMenu\">\n    <div id=\"regisMenuTop\">\n    <p>\n    Registration form\n    </p>\n    </div>\n      <form action=\"\" method=\"post\">\n        <p>Enter your name</p>\n        <div class=\"input-container\">\n          <input type=\"text\" required minlength=\"2\" id=\"nameUser\">\n          <label class=\"label\">Enter name</label>\n        <div class=\"underline\"></div>\n        </div>\n        <p>Enter your email</p>\n        <div class=\"input-container\">\n          <input type=\"email\" required>\n          <label class=\"label\">Enter email</label>\n        <div class=\"underline\"></div>\n        </div>\n        <p>Enter your password</p>\n        <div class=\"input-container\">\n          <input type=\"password\" id=\"parol\" required minlength=\"5\"  maxlength=\"20\">\n          <label class=\"label\">Enter password</label>\n        <div class=\"underline\"></div>\n        </div>\n        <input type=\"submit\" id=\"submit\" value=\"Send form\">\n      </form>\n      <button id=\"activePassword\">Show password</button>\n    </div>\n  ";
+    newDiv.innerHTML = "\n    <div id=\"regisClose\" onclick=\"newDiv.handleClear()\">\n      <img src=\"ts/cross.svg\" alt=\"a\">\n    </div>\n    <div id=\"regisMenu\">\n    <div id=\"regisMenuTop\">\n    <p>\n    Registration form\n    </p>\n    </div>\n      <form action=\"\" method=\"post\">\n        <p>Enter your name</p>\n        <div class=\"input-container\">\n          <input type=\"text\" required minlength=\"2\" id=\"name\">\n          <label class=\"label\">Enter name</label>\n        <div class=\"underline\"></div>\n        </div>\n        <p>Enter your email</p>\n        <div class=\"input-container\">\n          <input type=\"email\" required id=\"email\">\n          <label class=\"label\">Enter email</label>\n        <div class=\"underline\"></div>\n        </div>\n        <p>Enter your password</p>\n        <div class=\"input-container\">\n          <input type=\"password\" id=\"parol\" required minlength=\"5\"  maxlength=\"20\">\n          <label class=\"label\">Enter password</label>\n        <div class=\"underline\"></div>\n        </div>\n        <input type=\"submit\" id=\"submit\" value=\"Send form\">\n      </form>\n      <button id=\"activePassword\">Show password</button>\n    </div>\n  ";
     newDiv.style.visibility = 'visible';
     var currentDiv = document.getElementById("div1");
     document.body.insertBefore(newDiv, currentDiv);
@@ -25,10 +25,27 @@ function addElement() {
             check.style.backgroundColor = "rgb(61, 170, 61)";
         }
     };
+    var name = document.getElementById("name");
+    var email = document.getElementById("email");
     var submit = document.getElementById("submit");
-    submit.onclick = function checkEquality() {
-        var nameUser = document.getElementById("nameUser");
-        alert("".concat(nameUser.value, " you are successfully registered"));
+    var users = {};
+    function User(name, email, parol) {
+        this.name = name;
+        this.email = email;
+        this.parol = parol;
+    }
+    function createId(users) {
+        return Object.keys(users).length;
+    }
+    submit.onclick = function () {
+        var nameUser = name.value;
+        var emailUser = email.value;
+        var passwordlUser = parol.value;
+        var user = new User(nameUser, emailUser, passwordlUser);
+        var userId = 'User' + createId(users);
+        users[userId] = user;
+        console.log(users);
+        alert("".concat(name.value, " you are successfully registered"));
     };
 }
 var activeMenu = document.getElementById("menu");
