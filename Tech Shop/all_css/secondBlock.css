@@ -8,4 +8,63 @@
           background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-top: 200px;
+  margin-bottom: 300px;
+}
+
+#aboutMonit {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(43, 36, 79);
+  color: rgb(89, 74, 163);
+  margin-bottom: 200px;
+}
+#aboutMonit h1 {
+  float: left;
+  width: 400px;
+  padding-top: 50px;
+  padding-left: 300px;
+  padding-bottom: 50px;
+}
+#aboutMonit ul {
+  font-size: 18px;
+  width: 260px;
+  padding-top: 50px;
+  padding-left: 400px;
+  list-style-type: none;
+  text-align: left;
+}
+#aboutMonit img {
+  height: 400px;
+  float: right;
+  padding-right: 300px;
+  margin-top: -300px;
+}
+
+#aboutLapt {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(89, 74, 163);
+  color: rgb(43, 36, 79);
+  margin-bottom: 200px;
+}
+#aboutLapt h1 {
+  float: right;
+  width: 400px;
+  padding-top: 50px;
+  padding-right: 300px;
+  margin-bottom: -200px;
+}
+#aboutLapt ul {
+  float: right;
+  font-size: 18px;
+  width: 260px;
+  padding-right: 400px;
+  margin-top: -200px;
+  list-style-type: none;
+  text-align: left;
+}
+#aboutLapt img {
+  height: 400px;
+  padding-left: 300px;
+  margin-top: 50px;
 }

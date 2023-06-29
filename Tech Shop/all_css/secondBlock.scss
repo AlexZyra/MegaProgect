@@ -1,3 +1,5 @@
+@import './index.scss';
+
 .secondPart {
     text-align: center;
 
@@ -7,5 +9,71 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         padding-top: 200px;
+        margin-bottom: 300px;
     }
+}
+
+#aboutMonit {
+    width: 100%;
+    height: 500px;
+    background-color: $textRegisColor;
+    color: $textColor;
+
+    h1 {
+        float: left;
+        width: 400px;
+        padding-top: 50px;
+        padding-left: 300px;
+        padding-bottom: 50px;
+    }
+
+    ul {
+        font-size: 18px;
+        width: 260px;
+        padding-top: 50px;
+        padding-left: 400px;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    img {
+        height: 400px;
+        float: right;
+        padding-right: 300px;
+        margin-top: -300px;
+    }
+
+    margin-bottom: 200px;
+}
+
+#aboutLapt {
+    width: 100%;
+    height: 500px;
+    background-color: $textColor;
+    color: $textRegisColor;
+    h1 {
+        float: right;
+        width: 400px;
+        padding-top: 50px;
+        padding-right: 300px;
+        margin-bottom: -200px;
+    }
+
+    ul {
+        float: right;
+        font-size: 18px;
+        width: 260px;
+        padding-right: 400px;
+        margin-top: -200px;
+        list-style-type: none;
+        text-align: left;
+    }
+
+    img {
+        height: 400px;
+        padding-left: 300px;
+        margin-top: 50px;
+    }
+
+    margin-bottom: 200px;
 }

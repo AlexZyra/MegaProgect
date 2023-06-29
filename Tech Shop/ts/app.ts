@@ -76,7 +76,7 @@ function addElement() {
   }
 
 
-  function createId(users) {
+  function createId(users: any) {
     return Object.keys(users).length;
   }
 
